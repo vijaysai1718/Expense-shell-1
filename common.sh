@@ -1,11 +1,11 @@
 #!/bin/bash
 set -e 
 
-trap 'handle_error ${LINENO} "$BASH_COMMAND"' ERR
+trap 'handle_error ${LINENO} "${BASH_COMMAND}"' ERR
 
 handle_error()
 {
-    echo "error occured at line number :$1, error command is:$2"
+    echo "error occured at line number is :$1, error command is:$2"
 }
 
 git sdskjds
