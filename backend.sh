@@ -1,34 +1,8 @@
 #!/bin/bash
 
-user=$( id -u )
-scriptName=$( echo $0 | cut -d "." -f1 )
-timeStamp=$( date +%F-%H-%M-%S)
-fileName=/tmp/$scriptName-$timeStamp.log
+source ./common.sh
 
-
-
-red="\e[31m"
-green="\e[32m"
-normal="\e[0m"
-yellow="\e[33m"
-
-if [ $user -ne 0 ]
-then
-echo "hey man you are not having access to run this script please get the root access or try with super access"
-exit 1
-else
-echo "User is having super access"
-fi
-
-validate()
-
-if [ $1 -ne 0 ]
-then
-echo -e "$2  got $red failed $normal please check the logs for more details"
-exit 1
-else
-echo -e " $2  $green success $normal"
-fi
+check()
 
 #this is will disable the default node js 
 dnf module disable nodejs -y &>>fileName.log
@@ -79,7 +53,7 @@ systemctl enable backend &>>$fileName
 validate $? "enabled backend service"
 
 dnf install mysql -y &>>$fileName #ExpenseApp@1
-mysql -h db.vijaysai.online -uroot -p${mysql_root_password} < /app/schema/backend.sql
+mysql -h 172.31.25.80 -uroot -p${mysql_root_password} < /app/schema/backend.sql
 
 systemctl restart backend &>>$fileName
 validate $? "backend service restarted"
