@@ -1,10 +1,10 @@
 #!/bin/bash
 
-check()
+check
 
 echo "please enter the password for the mysql root user"
-
 read -s mysql_root_password
+
 dnf install mysql-server -y &>>$fileName
 
 validate $? "mysql-server installation is"

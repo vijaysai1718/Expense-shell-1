@@ -2,7 +2,7 @@
 
 source ./common.sh
 
-check()
+check
 
 #this is will disable the default node js 
 dnf module disable nodejs -y &>>fileName.log
