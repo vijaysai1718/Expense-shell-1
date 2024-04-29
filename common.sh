@@ -1,4 +1,12 @@
 #!/bin/bash
+set -e 
+
+trap 'handle_error ${LINENO} "${BASH_COMMAND}"'
+
+handle_error()
+{
+    echo "error occured at line no :$1, error command is:$2"
+}
 
 user=$( id -u )
 scriptName=$( echo $0 | cut -d "." -f1 )
