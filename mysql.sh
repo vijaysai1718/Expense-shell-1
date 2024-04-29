@@ -23,7 +23,7 @@ validate $? "mysqld server started"
 #Below code will be useful for idempotent nature
 #below command will be checking whether we are able to get the list of db or not 
 #If we are getting then already password already been set so no need of setting password again which will cause for an issue
-mysql -h 172.31.25.80 -uroot -p${mysql_root_password} -e 'show databases;' &>>$fileName
+mysql -h db.vijaysai.online -uroot -p${mysql_root_password} -e 'show databases;' &>>$fileName
 if [ $? -ne 0 ]
 then
     mysql_secure_installation --set-root-pass ${mysql_root_password} &>>$fileName
