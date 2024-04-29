@@ -8,6 +8,8 @@ handle_error()
     echo "error occured at line no :$1, error command is:$2"
 }
 
+git sdskjds
+
 user=$( id -u )
 scriptName=$( echo $0 | cut -d "." -f1 )
 timeStamp=$( date +%F-%H-%M-%S)
