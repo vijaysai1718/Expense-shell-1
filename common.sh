@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e 
 
-trap 'handle_error ${LINENO} "${BASH_COMMAND}"' ERR
+trap 'handle_error ${LINENO} "${BASHCOMMAND}"' ERR
 
 handle_error()
 {
