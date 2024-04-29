@@ -41,7 +41,7 @@ validate $? "unzipped the backend code"
 npm install
 validate $? "npm installed"
 #check your repo and path
-cp /home/ec2-user/expense-project-script/expense-shell/backend.service /etc/systemd/system/backend.service &>>$fileName
+cp /home/ec2-user/Expense-shell-1/backend.service /etc/systemd/system/backend.service &>>$fileName
 validate $? "Copied backend service"
 
 systemctl daemon-reload &>>$fileName
