@@ -1,9 +1,9 @@
 #!/bin/bash
 set -e 
 
-trap 'handle_error ${LINENO} "${BASH_COMMAND}"'
+trap 'handle_error ${LINENO} "$BASH_COMMAND"' ERR
 
-handle_error()
+handle_error()s
 {
     echo "error occured at line no :$1, error command is:$2"
 }
