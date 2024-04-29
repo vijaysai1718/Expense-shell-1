@@ -3,9 +3,9 @@ set -e
 
 trap 'handle_error ${LINENO} "$BASH_COMMAND"' ERR
 
-handle_error()s
+handle_error()
 {
-    echo "error occured at line no :$1, error command is:$2"
+    echo "error occured at line number :$1, error command is:$2"
 }
 
 git sdskjds
