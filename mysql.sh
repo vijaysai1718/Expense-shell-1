@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source ./common.sh
+
 check
 
 echo "please enter the password for the mysql root user"
