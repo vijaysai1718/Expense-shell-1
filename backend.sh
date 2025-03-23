@@ -53,7 +53,7 @@ systemctl enable backend &>>$fileName
 validate $? "enabled backend service"
 
 dnf install mysql -y &>>$fileName #ExpenseApp@1
-mysql -h 172.31.25.80 -uroot -p${mysql_root_password} < /app/schema/backend.sql
+mysql -h db.vijaysai.online -uroot -p${mysql_root_password} < /app/schema/backend.sql
 
 systemctl restart backend &>>$fileName
 validate $? "backend service restarted"
